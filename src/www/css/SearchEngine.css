@@ -1,0 +1,129 @@
+.ScrollStyle
+{
+    max-height: 580px;
+    max-width: 800px;
+    overflow-y: scroll;
+    
+}
+div button {
+    position: absolute;
+    right: 330px;
+    top: 40px;
+    padding:  5px 15px;
+    font-family: arial,helvetica,sans-serif;
+  font-size: 14px;
+  text-shadow: 0 0 1px #000;
+  cursor: pointer;
+  color: #fff;
+  border-right: 0;
+  background: linear-gradient(lightblue,cyan);
+  border-top-right-radius: 5px 5px;
+  border-bottom-right-radius: 5px 5px;
+  position:absolute;
+  height: 30px; 
+  border: 2px solid #0076a3;
+
+ }   
+.form-control {
+    margin: 0;
+    padding: 5px 10px;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 14px;
+    border: 1px solid #0076a3;
+    border-right: 0;
+    border-top-left-radius: 5px 5px;
+    font-style: italic;
+    height: 30px;
+    width:600px;
+}
+table ul li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  }
+  
+  input {
+    
+    width: 1400px;
+  }
+  #left {
+        position:fixed;
+        top: 0;
+        bottom: 0;
+        width: 17%;
+        left: 0;
+        background-color: cyan;
+      
+       }
+
+#right {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 15%;
+        right: 0;
+        background-color: cyan;
+       }
+       body {
+        background-color: silver;
+       }
+       table tr:nth-child(even) {
+        background-color: #f9f9f9;
+       }
+       table tr:nth-child(odd) {
+        background-color: #f2f2f2;
+       }
+.share {
+        margin-top: -100px;
+        margin-left: 800px;
+       }
+#outerbox {
+width:890px;
+overflow:hidden;
+margin-left: 240px;
+margin-right: 890px;
+
+}
+#sliderbox {
+  position:relative;
+  width: 1200px;
+  animation-name: test;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation:test 20s infinite;   
+}
+#sliderbox img {
+  float:left;
+}
+@keyframes test {
+0% {
+left: 0px;
+}
+20% {
+
+  left: 0px;
+}
+25% {
+  left: -300px;
+}
+45% {
+  left: -300px;
+}
+50% {
+  left: -600px;
+}
+70% {
+  left: -600px;
+}
+75% {
+  left:-900px;
+}
+95% {
+  left: -900px;
+
+}
+100% {
+  left:-1200px;
+}
+
