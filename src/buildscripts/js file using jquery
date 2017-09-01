@@ -48,7 +48,7 @@ var data = [
                 "Salary": "1.4lpa"
             },
 ];
-/* we have to search in text box as key ..if at all we doesnot enter it does not shows output.filter-records div which will contain filtered json data 
+/* we have to search in text box as key ..if at all we doesnot enter it does not shows output.filter-records div which will contain filtered json data */ 
 
 $('#txt-search').keyup(function(){
 var searchField = $(this).val();
