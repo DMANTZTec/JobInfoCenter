@@ -10,6 +10,7 @@ public class Jobs {
 	private String education;
 	private int experience;
 	private int salary;
+	//Private int bonus;
 	
 	
 	
