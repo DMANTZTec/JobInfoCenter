@@ -1,0 +1,121 @@
+<html>
+<body>
+<head>
+<link rel="stylesheet" href="C:\Git_WS\JobInfoCenter\src\www\css\livesearch2.css" />
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</head>
+<div class="container" style="padding:50px 250px;">
+  <form id="form">
+    <div class="form-group">
+      <input type="input"  class="form-control_input-lg"  id="txt-search" placeholder="Type your search character">
+       <button id="sh" type='button' style="position: absolute; right: 300px;top:50px">Go</button>    
+        </div>
+        <h2>Result &nbsp;&nbsp;
+<img src="../images/icons8-Filter-26.png"></h2>
+<h2>
+<img class="share" src="../images/icons8-Share-50.png">
+</h2>
+
+ </form>
+ <div style="border:1px solid black;width:700px;height:300px;overflow:scroll;">
+ <div id="filter-records"></div>
+ </div>
+
+
+ <div id="left"></div>
+ <div id="right"></div>
+ <div id="outerbox">
+ <div id="sliderbox">
+   
+    <img src="../images/businessmen-42691_1280.png" width="300" height="200" />
+    <img src="../images/entrepreneur-696959_1920.jpg" width="300" height="200"/>
+    <img src="../images/thumb-2480775_1920.jpg" width="300" height="200"/>
+    <img src="../images/board-2434016_1920.jpg" width="300" height="200"/>
+  </div>
+  </div>
+
+
+<script>
+var data = [  
+  
+   {
+                "ID": "1",
+                "Jobtitle": "SoftwareEngineer",
+                "Education": "B.tech",
+                "Salary": "5lpa"
+            },
+            {
+                "ID": "2",
+                "Jobtitle": "UIDesigner",
+                "Education":"BE",
+                "Salary": "2lpa"
+            },
+            {
+                "ID": "3",
+                "Jobtitle": "DatabaseAdministrator",
+                "Education": "M.tech",
+                "Salary": "4lpa"
+            },
+            {
+                "ID": "4",
+                "Jobtitle":"VoiceProcess",
+                "Education": "Inter",
+                "Salary": "2lpa"
+            },
+           {
+                "ID": "5",
+                "Jobtitle":"Non-VoiceProcess",
+                "Education": "Int",
+                "Salary": "1.4lpa"
+            },
+];
+
+
+
+
+$('#txt-search').keyup(function(){
+var searchField = $(this).val();
+ if(searchField === '')  {
+ $('#filter-records').html('');
+ return;
+ }
+var regex = new RegExp(searchField, "i");
+var output = '<div class="row">';
+var count = 1;
+$("#sh").click(function(){
+  $.each(data, function(key, val){
+
+ if ((val.ID.search(regex) != -1) || (val.Jobtitle.search(regex) != -1) || (val.Education.search(regex) != -1) || (val.Salary.search(regex) != -1)) {
+   output += '<div class="row-md-6 well">';
+   output +=  '<div class="row-md-3"></div>';
+   output += "Jobid:"+ val.ID + "<br/>";
+   output +=  "Jobtitle:" + val.Jobtitle + "<br>";
+ output +=   "Education:" + val.Education + "<br>";
+ output +=  "Salary:" + val.Salary + "<br>";
+   output += '</div>';
+   output += '</div>';
+   if(count%4== 0){
+ output += '</div><div class="row">';
+   }
+   count++;
+ }
+});
+  
+   output += '</div><br/>';
+   $('#filter-records').html(output);
+
+ });
+});
+
+
+
+
+ 
+</script>
+</body>
+</html>
