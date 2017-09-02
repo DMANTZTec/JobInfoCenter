@@ -1,0 +1,101 @@
+.form-control_input-lg {
+   margin: 0;
+    padding: 5px 10px;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 14px;
+    border: 1px solid #0076a3;
+    border-right: 0;
+    border-top-left-radius: 5px 5px;
+    font-style: italic;
+    height: 30px;
+    width:660px;
+}
+
+#sh {
+  position: absolute;
+    right: 330px;
+    top: 40px;
+    padding:  14px 15px;
+    font-family: arial,helvetica,sans-serif;
+  font-size: 14px;
+  text-shadow: 0 0 1px #000;
+  cursor: pointer;
+  color: #fff;
+  border-right: 0;
+  background: linear-gradient(lightblue,cyan);
+  border-top-right-radius: 5px 5px;
+  border-bottom-right-radius: 5px 5px;
+  height: 20px; 
+  border: 2px solid #0076a3;
+
+}
+#left {
+        position:fixed;
+        top: 0;
+        bottom: 0;
+        width: 22%;
+        left: 0;
+        background-color: cyan;
+      
+       }
+
+#right {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 22%;
+        right: 0;
+        background-color: cyan;
+       }
+.share {
+        margin-top: -60px;
+        margin-left: 600px;
+       }
+#outerbox {
+width:700px;
+overflow:hidden;
+margin-left: 0px;
+margin-right: 890px;
+
+}
+#sliderbox {
+  position:relative;
+  width: 1200px;
+  animation-name: test;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation:test 20s infinite;   
+}
+#sliderbox img {
+  float:left;
+}
+@keyframes test {
+0% {
+left: 0px;
+}
+20% {
+
+  left: 0px;
+}
+25% {
+  left: -300px;
+}
+45% {
+  left: -300px;
+}
+50% {
+  left: -600px;
+}
+70% {
+  left: -600px;
+}
+75% {
+  left:-900px;
+}
+95% {
+  left: -900px;
+
+}
+100% {
+  left:-1200px;
+}
