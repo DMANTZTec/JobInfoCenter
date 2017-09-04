@@ -1,0 +1,88 @@
+<html>
+<head>
+
+<script type="text/javascript">
+ 
+function go()
+{
+var mySet = [
+            {
+                "ID": "1",
+                "Jobtitle": "SoftwareEngineer",
+                "Education": "B.tech",
+                "Salary": "5lpa"
+            },
+            {
+                "ID": "2",
+                "Jobtitle": "UIDesigner",
+                "Education":"BE",
+                "Salary": "2lpa"
+            },
+            {
+                "ID": "3",
+                "Jobtitle": "DatabaseAdministrator",
+                "Education": "M.tech",
+                "Salary": "4lpa"
+            },
+            {
+                "ID": "4",
+                "Jobtitle":"VoiceProcess",
+                "Education": "Inter",
+                "Salary": "2lpa"
+            },
+           {
+                "ID": "5",
+                "Jobtitle":"Non-VoiceProcess",
+                "Education": "Int",
+                "Salary": "1.4lpa"
+            },
+           {
+                "ID": "6",
+                "Jobtitle":"HRRecruiter",
+                "Education": "M.B.A",
+                "Salary": "1.6lpa"
+            },
+            {
+                "ID": "7",
+                "Jobtitle":"DataEntry",
+                "Education": "Any Degree",
+                "Salary": "1lpa"
+            },
+           {
+                "ID": "8",
+                "Jobtitle":"CampusCoordinator",
+                "Education": "M.S.C",
+                "Salary": "6lpa"
+            },
+
+        ];
+        
+
+
+mySet.forEach(function(data)
+{
+  
+        document.getElementById('s').innerHTML+="ID:"+data.ID+"<br>";
+    document.getElementById('s').innerHTML+="Jobtitle:"+data.Jobtitle+"<br>";
+    document.getElementById('s').innerHTML+="Education:"+data.Education+"<br>";
+    document.getElementById('s').innerHTML+="Salary:"+data.Salary+"<br>";
+});
+}
+
+
+</script>
+</head>
+<body>
+<form>
+    <input type="text" >
+    </form>
+    <input id="submit" type="button" value="submit" onclick="go();">
+
+    <div id="s" </div>
+    </div>
+    </table>
+ 
+ 
+ 
+</body>
+</html>
