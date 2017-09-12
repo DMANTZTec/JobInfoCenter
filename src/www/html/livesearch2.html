@@ -1,45 +1,106 @@
 <html>
-<body>
 <head>
 <link rel="stylesheet" href="..\css\livesearch2.css" />
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>
 
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </head>
+<body>
+
+<script>
+function loadDoc()
+ { 
+  console.log("In loadDoc()");
+  var xhttp= new XMLHttpRequest();
+ 
+  var url="http://192.168.100.9:8085/JobInfoCenter3/JicController";
+  console.log(document.getElementById("jobsearchform").elements.namedItem("searchinput").value)
+  
+  var myarr={searchtext:document.getElementById("txt-search").value,operationtype:document.getElementById("hiddensearch").value};
+  
+   var params=JSON.stringify(myarr);
+  //var params = "params" + "=" + document.getElementById("jobsearchform").elements.namedItem("searchinput").value ;
+   //var params = "searchText" + "=" + "manager";
+  console.log(params);
+ var params="inputJsonStr" + "=" + params;
+  
+ /*var searchText1 = { 
+	        operationType : document.getElementById("searchform").elements.namedItem("operation").value ,
+	        searchText : document.getElementById("searchform").elements.namedItem("searchtext").value
+	    };  
+ var params = JSON.stringify(searchText1);*/
+  
+  xhttp.open("POST",url,true);
+  xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xhttp.onreadystatechange = function()
+  {
+   if ((this.readyState == 4) && (this.status == 200)) {
+	   console.log("after getting response" + xhttp.responseText);
+	   
+	    var my=JSON.parse(this.responseText);
+	    document.getElementById('resultbox').innerHTML =null;
+	   for(i=0;i<my.length;i++)
+	   {
+		   
+	   document.getElementById('resultbox').innerHTML+= '<div class="row"style="border: 1px solid;">'
+	   document.getElementById('resultbox').innerHTML +='<input type="checkbox" class="checkbox" style="float:right;">';
+	   document.getElementById('resultbox').innerHTML+="Id:"+my[i].id+"<br/>";
+	   document.getElementById('resultbox').innerHTML+="Jobtitle:"+my[i].jobtitle+"<br/>";
+	   document.getElementById('resultbox').innerHTML+="Education:"+my[i].education+"<br/>";
+	   document.getElementById('resultbox').innerHTML+="Salary:"+my[i].salary+"<br/>";
+	   document.getElementById('resultbox').innerHTML+="Experience:"+my[i].experience+"<br/>";
+	   document.getElementById('resultbox').innerHTML+="Jobdescription:"+my[i].jobdescription+"<br/>";
+	   //document.getElementById('resultbox').innerHTML +='<input type="checkbox" class="checkbox style="float:right;">';
+	   document.getElementById('resultbox').innerHTML +=  '</div>';
+	   }
+	   
+	 //document.getElementById('resultbox').innerHTML=xhttp.responseText;
+     console.log(xhttp.responseText);
+     //alert(xhttp.responseText);
+    // document.getElementById('demo').innerHTML=this.responseText;
+     }
+	  else  
+	  {}
+  };
+	  console.log("before sending request");
+	  xhttp.send(params);
+ }
+ 
+
+</script>
 <div class="container" style="padding:50px 250px;">
-  <form id="form">
+ <form id="jobsearchform" method="post">
     <div class="form-group">
-      <input type="input"  class="form-control_input-lg"  id="txt-search" placeholder="Type your search character">
-       <button id="sh" type='button' style="position: absolute; right: 300px;top:50px">Go</button>    
+    <input type="hidden" id="hiddensearch">
+      <input type="text"  class="form-control_input-lg"  id="txt-search" name="searchinput" placeholder="Type your search characters">
+       <button id="sh" type='button' onclick="loadDoc()" style="position: absolute; right: 300px;top:50px" Value="GO">Go</button>    
         </div>
         <h2>Result &nbsp;&nbsp;
-<img src="../images/Filter.png"></h2>
+<img src="../images/Filter.png" ></h2>
+
 <h2>
 <img class="share" src="../images/icons8-Share-50.png">
 </h2>
 
- </form>
- <div style="border:1px solid black;width:700px;height:300px;overflow:scroll;">
+
+</form>
+ <div id=resultbox style="border:1px solid black;width:700px;height:300px;overflow:scroll;">
  <div id="filter-records"></div>
  </div>
-
-
  <div id="left"></div>
  <div id="right"></div>
- <div id="outerbox">
+ <div id="outerbox"><P></P>
+  </div>
  <div id="sliderbox">
-   
-    <img src="../images/businessmen-42691_1280.png" width="300" height="200" />
-    <img src="../images/entrepreneur-696959_1920.jpg" width="300" height="200"/>
-    <img src="../images/thumb-2480775_1920.jpg" width="300" height="200"/>
-    <img src="../images/board-2434016_1920.jpg" width="300" height="200"/>
+   <img src="../images/businessmen-42691_1280.png" width="300" height="200" />
+   <img src="../images/entrepreneur-696959_1920.jpg" width="300" height="200"/>
+   <img src="../images/thumb-2480775_1920.jpg" width="300" height="200"/>
+   <img src="../images/board-2434016_1920.jpg" width="300" height="200"/>
   </div>
   </div>
-
-
+<!-- 
 <script>
 var data = [  
   
@@ -111,11 +172,9 @@ $("#sh").click(function(){
 
  });
 });
-
-
-
-
  
 </script>
+-->
+
 </body>
 </html>
